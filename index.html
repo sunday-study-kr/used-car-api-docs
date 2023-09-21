@@ -455,6 +455,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
+<li><a href="#_auth">Auth</a>
+<ul class="sectlevel2">
+<li><a href="#_토큰_갱신">토큰 갱신</a>
+<ul class="sectlevel3">
+<li><a href="#_토큰_갱신_http_request">HTTP request</a></li>
+<li><a href="#_토큰_갱신_http_response">HTTP response</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#_badge">Badge</a>
 <ul class="sectlevel2">
 <li><a href="#_대표_뱃지_등록">대표 뱃지 등록</a>
@@ -477,6 +487,76 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#_칭찬_생성_http_request">HTTP request</a></li>
 <li><a href="#_칭찬_생성_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_칭찬_전체_조회">칭찬 전체 조회</a>
+<ul class="sectlevel3">
+<li><a href="#_칭찬_전체_조회_http_request">HTTP request</a></li>
+<li><a href="#_칭찬_전체_조회_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_멤버가_받은_칭찬_조회">멤버가 받은 칭찬 조회</a>
+<ul class="sectlevel3">
+<li><a href="#_멤버가_받은_칭찬_조회_http_request">HTTP request</a></li>
+<li><a href="#_멤버가_받은_칭찬_조회_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_칭찬_상세_조회">칭찬 상세 조회</a>
+<ul class="sectlevel3">
+<li><a href="#_칭찬_상세_조회_http_request">HTTP request</a></li>
+<li><a href="#_칭찬_상세_조회_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_칭찬_업데이트">칭찬 업데이트</a>
+<ul class="sectlevel3">
+<li><a href="#_칭찬_업데이트_http_request">HTTP request</a></li>
+<li><a href="#_칭찬_업데이트_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_칭찬_업데이트_2">칭찬 업데이트</a>
+<ul class="sectlevel3">
+<li><a href="#_칭찬_업데이트_2_http_request">HTTP request</a></li>
+<li><a href="#_칭찬_업데이트_2_http_response">HTTP response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_review">Review</a>
+<ul class="sectlevel2">
+<li><a href="#_리뷰_생성">리뷰 생성</a>
+<ul class="sectlevel3">
+<li><a href="#_리뷰_생성_http_request">HTTP request</a></li>
+<li><a href="#_리뷰_생성_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_리뷰_전체_조회">리뷰 전체 조회</a>
+<ul class="sectlevel3">
+<li><a href="#_리뷰_전체_조회_http_request">HTTP request</a></li>
+<li><a href="#_리뷰_전체_조회_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_리뷰_단건_조회">리뷰 단건 조회</a>
+<ul class="sectlevel3">
+<li><a href="#_리뷰_단건_조회_http_request">HTTP request</a></li>
+<li><a href="#_리뷰_단건_조회_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_멤버가_작성한_리뷰_조회">멤버가 작성한 리뷰 조회</a>
+<ul class="sectlevel3">
+<li><a href="#_멤버가_작성한_리뷰_조회_http_request">HTTP request</a></li>
+<li><a href="#_멤버가_작성한_리뷰_조회_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_리뷰_업데이트">리뷰 업데이트</a>
+<ul class="sectlevel3">
+<li><a href="#_리뷰_업데이트_http_request">HTTP request</a></li>
+<li><a href="#_리뷰_업데이트_http_response">HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_리뷰_삭제">리뷰 삭제</a>
+<ul class="sectlevel3">
+<li><a href="#_리뷰_삭제_http_request">HTTP request</a></li>
+<li><a href="#_리뷰_삭제_http_response">HTTP response</a></li>
 </ul>
 </li>
 </ul>
@@ -510,11 +590,46 @@ Content-Type: application/json;charset=UTF-8
 Content-Length: 165
 
 {
-  "id" : "32b8508f-1a3d-4bcb-ad26-0a3c0d93fb53",
+  "id" : "ebc5ab69-0fe8-47d7-8707-bf70df2e166c",
   "nickname" : "ohksj77",
   "manner_temperature" : 36.5,
   "rate_of_re_dealing" : 50.0,
   "response_rate" : 70.0
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth"><a class="link" href="#_auth">Auth</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_토큰_갱신"><a class="link" href="#_토큰_갱신">토큰 갱신</a></h3>
+<div class="sect3">
+<h4 id="_토큰_갱신_http_request"><a class="link" href="#_토큰_갱신_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /auth/refresh HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Host: localhost:8080
+Cookie: Refresh=refresh token
+Cookie: Access=access token</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_토큰_갱신_http_response"><a class="link" href="#_토큰_갱신_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 74
+
+{
+  "access_token" : "access token",
+  "refresh_token" : "refresh token"
 }</code></pre>
 </div>
 </div>
@@ -538,7 +653,7 @@ Content-Length: 51
 Host: localhost:8080
 
 {
-  "id" : "b08b3ec2-7f13-4744-9ce3-bcfc76a3c21a"
+  "id" : "0a9c2093-0c6f-4306-8df5-a2033fe7d3ca"
 }</code></pre>
 </div>
 </div>
@@ -547,7 +662,7 @@ Host: localhost:8080
 <h4 id="_대표_뱃지_등록_http_response"><a class="link" href="#_대표_뱃지_등록_http_response">HTTP response</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK</code></pre>
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content</code></pre>
 </div>
 </div>
 </div>
@@ -574,13 +689,13 @@ Content-Type: application/json;charset=UTF-8
 Content-Length: 330
 
 [ {
-  "id" : "5ecb68b5-52e3-4e66-8565-e6cae75e1ad4",
-  "member_id" : "a3c6a444-1aea-4ca3-b1f2-63b91988f14c",
+  "id" : "d64ac57a-e23a-4be1-ab83-b374dc7fda18",
+  "member_id" : "33e1c784-b033-4804-b0fa-bdc81fe47800",
   "badge_name" : "거래왕",
   "is_represent" : true
 }, {
-  "id" : "14e61a35-1cfa-49af-bbf6-f0e6ac2f6394",
-  "member_id" : "de6c51f6-0274-4865-92fd-1f74c14b059f",
+  "id" : "7bf30251-b6eb-48e5-b639-b562972f0fb8",
+  "member_id" : "44d23fa6-0579-46ec-b583-8db834259c6b",
   "badge_name" : "친절왕",
   "is_represent" : true
 } ]</code></pre>
@@ -607,7 +722,7 @@ Host: localhost:8080
 
 {
   "content" : "칭찬합니다~~",
-  "member_id" : "1a60591b-f04d-4830-8424-34e1274b396d",
+  "member_id" : "fff2ad12-11d2-4a02-a5ae-d52c2362a0af",
   "praise_type" : "친절해요"
 }</code></pre>
 </div>
@@ -622,8 +737,354 @@ Content-Type: application/json;charset=UTF-8
 Content-Length: 51
 
 {
-  "id" : "437a209d-b34e-4bb5-9a9e-bf0dfa08a9ae"
+  "id" : "3e8108cf-3a75-4c11-bfef-d6cfe17772e8"
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_칭찬_전체_조회"><a class="link" href="#_칭찬_전체_조회">칭찬 전체 조회</a></h3>
+<div class="sect3">
+<h4 id="_칭찬_전체_조회_http_request"><a class="link" href="#_칭찬_전체_조회_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /praises HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Content-Length: 180
+Host: localhost:8080
+
+{
+  "sort" : {
+    "empty" : true,
+    "sorted" : false,
+    "unsorted" : true
+  },
+  "offset" : 0,
+  "page_number" : 0,
+  "page_size" : 20,
+  "paged" : true,
+  "unpaged" : false
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_칭찬_전체_조회_http_response"><a class="link" href="#_칭찬_전체_조회_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 327
+
+[ {
+  "id" : "fc257e1f-ff6a-462a-936e-5090bd5db989",
+  "member_id" : "eaad1fb6-960b-4663-9ffc-db8d71023f8e",
+  "praise_type" : "친절해요",
+  "amount" : 1
+}, {
+  "id" : "e289583f-58aa-41a5-9b64-8b9465c8a7fb",
+  "member_id" : "2e0cc8d0-6520-44ea-97f8-8008bbfca922",
+  "praise_type" : "응답이 빨라요",
+  "amount" : 4
+} ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_멤버가_받은_칭찬_조회"><a class="link" href="#_멤버가_받은_칭찬_조회">멤버가 받은 칭찬 조회</a></h3>
+<div class="sect3">
+<h4 id="_멤버가_받은_칭찬_조회_http_request"><a class="link" href="#_멤버가_받은_칭찬_조회_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /praises/members/2b79ba72-dc38-4757-a033-7788f624f7f6 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_멤버가_받은_칭찬_조회_http_response"><a class="link" href="#_멤버가_받은_칭찬_조회_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 327
+
+[ {
+  "id" : "b3c842df-a095-4f89-9687-7acacefd4208",
+  "member_id" : "5959ab69-7c30-4e12-b77a-bd30602b75ac",
+  "praise_type" : "친절해요",
+  "amount" : 1
+}, {
+  "id" : "d8a16aba-f021-43e5-90c1-2a0d575b7e44",
+  "member_id" : "3bd52601-b536-4fb1-9003-1dde1c4dba73",
+  "praise_type" : "응답이 빨라요",
+  "amount" : 4
+} ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_칭찬_상세_조회"><a class="link" href="#_칭찬_상세_조회">칭찬 상세 조회</a></h3>
+<div class="sect3">
+<h4 id="_칭찬_상세_조회_http_request"><a class="link" href="#_칭찬_상세_조회_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /praises/465fc2f4-4883-49f8-af91-deaa6a5948b1 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_칭찬_상세_조회_http_response"><a class="link" href="#_칭찬_상세_조회_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 137
+
+{
+  "id" : "8c9b2850-3e10-4e99-b1dd-23c4874a9241",
+  "praise_type" : "친절해요",
+  "content" : "친절하게 설명해주셨어요"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_칭찬_업데이트"><a class="link" href="#_칭찬_업데이트">칭찬 업데이트</a></h3>
+<div class="sect3">
+<h4 id="_칭찬_업데이트_http_request"><a class="link" href="#_칭찬_업데이트_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /praises HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Content-Length: 118
+Host: localhost:8080
+
+{
+  "id" : "eddc9b42-66f8-4ea5-99d1-b128c695a120",
+  "content" : "친절해요",
+  "praise_type" : "완전 친절!!"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_칭찬_업데이트_http_response"><a class="link" href="#_칭찬_업데이트_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_칭찬_업데이트_2"><a class="link" href="#_칭찬_업데이트_2">칭찬 업데이트</a></h3>
+<div class="sect3">
+<h4 id="_칭찬_업데이트_2_http_request"><a class="link" href="#_칭찬_업데이트_2_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /praises/8a1d3d08-eed0-4d3e-af8c-2c5d3f1f70db HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_칭찬_업데이트_2_http_response"><a class="link" href="#_칭찬_업데이트_2_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_review"><a class="link" href="#_review">Review</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_리뷰_생성"><a class="link" href="#_리뷰_생성">리뷰 생성</a></h3>
+<div class="sect3">
+<h4 id="_리뷰_생성_http_request"><a class="link" href="#_리뷰_생성_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /reviews HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Content-Length: 95
+Host: localhost:8080
+
+{
+  "content" : "매우 좋습니다",
+  "member_id" : "496012bd-b674-4281-96c5-4023997c0652"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_리뷰_생성_http_response"><a class="link" href="#_리뷰_생성_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
+Content-Type: application/json;charset=UTF-8
+Content-Length: 51
+
+{
+  "id" : "23ce57be-e8f1-4fbb-ac47-aaaf34231824"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_리뷰_전체_조회"><a class="link" href="#_리뷰_전체_조회">리뷰 전체 조회</a></h3>
+<div class="sect3">
+<h4 id="_리뷰_전체_조회_http_request"><a class="link" href="#_리뷰_전체_조회_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /reviews HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_리뷰_전체_조회_http_response"><a class="link" href="#_리뷰_전체_조회_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 145
+
+[ {
+  "id" : "75130f2e-8dd0-4c98-8546-52c03d4c692d",
+  "content" : "매우 좋아요",
+  "member_id" : "42305d1d-d44a-452d-ba78-9cc883e915c4"
+} ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_리뷰_단건_조회"><a class="link" href="#_리뷰_단건_조회">리뷰 단건 조회</a></h3>
+<div class="sect3">
+<h4 id="_리뷰_단건_조회_http_request"><a class="link" href="#_리뷰_단건_조회_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /reviews/cb7df52d-0fc9-417c-bffd-7bdee3e334c7 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_리뷰_단건_조회_http_response"><a class="link" href="#_리뷰_단건_조회_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 141
+
+{
+  "id" : "04accfa8-bd6a-40b7-b934-01563e714083",
+  "content" : "매우 좋아요",
+  "member_id" : "f4704ab7-2ac1-4253-b69a-2dcaf7e7fd8e"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_멤버가_작성한_리뷰_조회"><a class="link" href="#_멤버가_작성한_리뷰_조회">멤버가 작성한 리뷰 조회</a></h3>
+<div class="sect3">
+<h4 id="_멤버가_작성한_리뷰_조회_http_request"><a class="link" href="#_멤버가_작성한_리뷰_조회_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /reviews/members/be80361f-f9b9-41b3-8825-181d168a12f0 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_멤버가_작성한_리뷰_조회_http_response"><a class="link" href="#_멤버가_작성한_리뷰_조회_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 145
+
+[ {
+  "id" : "418e82bd-aacd-4259-aee6-2f21ad7c68b2",
+  "content" : "매우 좋아요",
+  "member_id" : "da7489c8-51e0-42dd-ac97-8ef3cd154608"
+} ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_리뷰_업데이트"><a class="link" href="#_리뷰_업데이트">리뷰 업데이트</a></h3>
+<div class="sect3">
+<h4 id="_리뷰_업데이트_http_request"><a class="link" href="#_리뷰_업데이트_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /reviews HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Content-Length: 85
+Host: localhost:8080
+
+{
+  "id" : "468c0789-9a32-4f64-b051-9448f2880d50",
+  "content" : "수정할 내용"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_리뷰_업데이트_http_response"><a class="link" href="#_리뷰_업데이트_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_리뷰_삭제"><a class="link" href="#_리뷰_삭제">리뷰 삭제</a></h3>
+<div class="sect3">
+<h4 id="_리뷰_삭제_http_request"><a class="link" href="#_리뷰_삭제_http_request">HTTP request</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /reviews/8a2c5862-c57f-4ad0-99e3-5e211b7cc1ec HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer 12asdf21435.asdfgafdsg231f.432t4243cf
+Host: localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_리뷰_삭제_http_response"><a class="link" href="#_리뷰_삭제_http_response">HTTP response</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content</code></pre>
 </div>
 </div>
 </div>
@@ -633,7 +1094,7 @@ Content-Length: 51
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-16 21:39:37 +0900
+Last updated 2023-09-21 23:02:25 +0900
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
